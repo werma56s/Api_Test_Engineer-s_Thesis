@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "6c1c8e5f-71b0-45f1-bb8c-a336fb3a55de",
+		"name": "P1- Wyświtel wszystkie piktoramy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15220494"
+	},
+	"item": [
+		{
+			"name": "Wyświtel wszystkie piktoramy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    pm.expect(jsonData[0].pictogramID).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"Odpoczywac\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_Basic}}/api/Pictograms",
+					"host": [
+						"{{URL_Basic}}"
+					],
+					"path": [
+						"api",
+						"Pictograms"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
